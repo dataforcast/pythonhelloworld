@@ -3,7 +3,9 @@ from core import hello
 import os
 
 # Port is retrieved from environment
-PORT = int(os.environ.get('PORT', 80))
+# When not defined, default port is used for Web server
+DEFAULT_PORT=8080
+PORT = int(os.environ.get('PORT', DEFAULT_PORT))
 app = Flask(__name__)
 
 @app.route('/')
